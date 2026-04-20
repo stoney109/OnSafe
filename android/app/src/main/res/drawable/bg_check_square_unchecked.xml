@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/bg_check_square_unchecked.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#FEFEFE" />
+    <stroke
+        android:width="2dp"
+        android:color="#D1D5DB" />
+    <corners android:radius="6dp" />
+</shape>
