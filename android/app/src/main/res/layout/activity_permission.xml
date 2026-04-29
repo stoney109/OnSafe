@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="52dp"
+    android:paddingBottom="20dp">
+
+    <!-- 본문 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="top"
+        android:paddingTop="40dp">
+
+        <!-- 아이콘 -->
+        <FrameLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_mode_icon_blue">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_notifications"
+                android:contentDescription="알림 아이콘" />
+
+        </FrameLayout>
+
+        <!-- 제목 + 설명 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="알림 권한이 필요합니다"
+            android:textSize="22sp"
+            android:textColor="#1A1C1E"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="낙상 위험 감지 시 즉시 알림을 받으려면\n알림 권한을 허용해주세요."
+            android:textSize="14sp"
+            android:textColor="#6B7280"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp" />
+
+        <!-- 권한 목록 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <!-- 카메라 권한 (카메라 모드일 때만 표시) -->
+            <LinearLayout
+                android:id="@+id/itemCamera"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_card_white"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_camera"
+                        android:contentDescription="카메라 아이콘" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="카메라 촬영·전송"
+                    android:textSize="13sp"
+                    android:textColor="#1A1C1E"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="12dp" />
+
+            </LinearLayout>
+
+            <!-- 긴급 알림 권한 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_permission_item"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <FrameLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_siren"
+                        android:contentDescription="알림 아이콘" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="위험 감지 긴급 알림"
+                    android:textSize="13sp"
+                    android:textColor="#1A1C1E"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="12dp" />
+
+            </LinearLayout>
+
+            <!-- 주의 알림 권한 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_permission_item"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:gravity="center_vertical">
+
+                <FrameLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_notifications"
+                        android:contentDescription="알림 아이콘" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="주의 단계 푸시 알림"
+                    android:textSize="13sp"
+                    android:textColor="#1A1C1E"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="12dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 하단 버튼 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 알림 허용하기 버튼 -->
+        <Button
+            android:id="@+id/btnAllow"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="알림 허용하기"
+            android:textColor="#FEFEFE"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_button_blue" />
+
+        <!-- 나중에 설정하기 -->
+        <TextView
+            android:id="@+id/tvSkip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="나중에 설정하기 (일부 기능 제한)"
+            android:textSize="13sp"
+            android:textColor="#9CA3AF"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
